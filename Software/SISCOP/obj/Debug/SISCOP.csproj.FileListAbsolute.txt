@@ -1,0 +1,12 @@
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\obj\Debug\SISCOP.csprojResolveAssemblyReference.cache
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\bin\SISCOP.dll.config
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\bin\SISCOP.dll
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\bin\SISCOP.pdb
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\obj\Debug\SISCOP.dll
+C:\Users\maykol\Desktop\SOFTWARE\SISCOP\SISCOP\obj\Debug\SISCOP.pdb
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\bin\SISCOP.dll.config
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\bin\SISCOP.dll
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\bin\SISCOP.pdb
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\obj\Debug\SISCOP.csprojResolveAssemblyReference.cache
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\obj\Debug\SISCOP.dll
+C:\Users\maykol\Documents\Universidad\Practica Profesional\SISCOP\Software\SISCOP\obj\Debug\SISCOP.pdb
