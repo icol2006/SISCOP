@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sitio.master.cs" Inherits="SISCOP.Mater.Sitio" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="../Content/Site.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span style="font-size:30px;color:white">SISCOP</span></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav  navbar-right">
+        <li><a href="frmOfertas.aspx">Ofertas</a></li>
+        <li><a href="frmProyectos.aspx">Proyectos</a></li>
+        <li><a href="frmEtapas.aspx">Etapas</a></li>
+        <li><a href="frmTareas.aspx">Tareas</a></li>
+        <li><a href="frmComentariosTarea.aspx">Comentarios</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
