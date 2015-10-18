@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><span style="font-size:30px;color:white">SISCOP</span></a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav  navbar-right">
+                    <li>@Html.ActionLink("Ofertas", "Index", "Ofertas")</li>
+                    <li>@Html.ActionLink("Proyectos", "Index", "Proyecto")</li>
+                    <li>@Html.ActionLink("Etapas", "Index", "Etapa")</li>
+                    <li>@Html.ActionLink("Tareas", "Index", "Tarea")</li>
+                    <li><a href="frmComentariosTarea.aspx">Comentarios</a></li>
+                    <li>@Html.ActionLink("Clientes", "Index","Clientes")</li>
+                    <li>@Html.ActionLink("Contactos", "Index","Contacto")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="padding-right: 30px">
+        <input type="text" style="float:right; display:inline-block">
+        <label style="float: right; display: inline-block;">Buscar   &nbsp;&nbsp;</label>
+    </div>
+
+    <div style="margin:30px">
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

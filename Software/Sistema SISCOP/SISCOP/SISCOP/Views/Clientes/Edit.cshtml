@@ -1,0 +1,72 @@
+﻿@model SISCOP.Models.Cliente
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Cliente</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend style="color:blue">Datos de Cliente</legend>
+            @Html.HiddenFor(model => model.id_cliente, new { @class = "control-label" })
+     
+
+        <div class="editor-label col-md-7">
+            @Html.LabelFor(model => model.nombre)
+            @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label col-md-7">
+            @Html.LabelFor(model => model.pais)
+            @Html.TextBoxFor(model => model.pais, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.pais)
+        </div>
+
+        <div class="col-md-7">
+            @Html.LabelFor(model => model.web)
+            @Html.TextBoxFor(model => model.web, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.web)
+        </div>
+
+        <div class="col-md-7">
+            @Html.LabelFor(model => model.fax)
+            @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.fax)
+        </div>
+
+        <div class="col-md-7">
+            @Html.LabelFor(model => model.telefono)
+            @Html.TextBoxFor(model => model.telefono, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.telefono)
+        </div>
+
+        <div class="col-md-7">
+            @Html.LabelFor(model => model.correo)
+            @Html.TextBoxFor(model => model.correo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.correo)
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.direccion)
+            @Html.TextAreaFor(model => model.direccion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.direccion)
+        </div>
+
+        <p class="col-md-12">
+            <input type="submit" class="btn-lg btn-primary" style="margin-top:40px;" value="Save" />
+        </p>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

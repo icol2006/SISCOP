@@ -1,0 +1,64 @@
+﻿@model SISCOP.Models.Contacto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Contacto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_contacto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_contacto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_cliente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_cliente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pais)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ocupacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ocupacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefonos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefonos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

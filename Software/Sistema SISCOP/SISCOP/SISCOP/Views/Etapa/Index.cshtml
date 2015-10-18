@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SISCOP.Models.Etapa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_etapa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proyecto.nombre_estudio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_final)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.encargado)
+        </th>
+        <th>
+           Ver tareas
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_etapa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proyecto.nombre_estudio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_inicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_final)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.encargado)
+            </td>
+            <td>
+                @Html.ActionLink("Ver Tareas", "Index", "Tarea", new { id = item.id_etapa}, null)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id_etapa  }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_etapa }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_etapa })
+            </td>
+        </tr>
+    }
+
+</table>

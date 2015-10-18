@@ -1,0 +1,64 @@
+﻿@model SISCOP.Models.Etapa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Etapa</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_etapa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_etapa)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Proyecto.nombre_estudio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Proyecto.nombre_estudio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_inicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_inicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_final)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_final)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.encargado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.encargado)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

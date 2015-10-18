@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SISCOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="pais" Type="varchar" MaxLength="350" />
+    <Property Name="web" Type="varchar" MaxLength="350" />
+    <Property Name="fax" Type="varchar" MaxLength="350" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="correo" Type="varchar" MaxLength="350" />
+    <Property Name="direccion" Type="varchar" MaxLength="350" />
+    <Property Name="nombre" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Contactos">
+    <Key>
+      <PropertyRef Name="id_contacto" />
+    </Key>
+    <Property Name="id_contacto" Type="int" Nullable="false" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="pais" Type="varchar" MaxLength="350" />
+    <Property Name="nombre" Type="varchar" MaxLength="350" />
+    <Property Name="ocupacion" Type="varchar" MaxLength="350" />
+    <Property Name="telefonos" Type="varchar" MaxLength="350" />
+    <Property Name="correo" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SISCOP.dbo.Correos_Contactos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Correos_Contactos">
+          <Property Name="id_correo_contacto" Type="int" />
+          <Property Name="numero" Type="int" />
+          <Property Name="id_contacto" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Etapa_Tarea">
+    <Key>
+      <PropertyRef Name="id_etapa_tarea" />
+    </Key>
+    <Property Name="id_etapa_tarea" Type="int" Nullable="false" />
+    <Property Name="id_usuario" Type="int" />
+    <Property Name="id_tarea" Type="int" />
+    <Property Name="id_etapa" Type="int" />
+  </EntityType>
+  <EntityType Name="Etapas">
+    <Key>
+      <PropertyRef Name="id_etapa" />
+    </Key>
+    <Property Name="id_etapa" Type="int" Nullable="false" />
+    <Property Name="id_proyecto" Type="int" />
+    <Property Name="nombre" Type="varchar" MaxLength="350" />
+    <Property Name="fecha_inicio" Type="nchar" MaxLength="10" />
+    <Property Name="fecha_final" Type="nchar" MaxLength="10" />
+    <Property Name="estado" Type="varchar" MaxLength="350" />
+    <Property Name="encargado" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="Ofertas">
+    <Key>
+      <PropertyRef Name="id_oferta" />
+    </Key>
+    <Property Name="id_oferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="responsable" Type="varchar" MaxLength="500" />
+    <Property Name="anho" Type="varchar" MaxLength="500" />
+    <Property Name="pais" Type="varchar" MaxLength="500" />
+    <Property Name="fecha_recepcion" Type="varchar" MaxLength="500" />
+    <Property Name="fecha_presentacion" Type="varchar" MaxLength="500" />
+    <Property Name="estado" Type="varchar" MaxLength="500" />
+    <Property Name="nota" Type="varchar" MaxLength="350" />
+    <Property Name="observacion" Type="varchar" MaxLength="350" />
+    <Property Name="id_cliente" Type="int" />
+  </EntityType>
+  <EntityType Name="Ofertas_Contactos">
+    <Key>
+      <PropertyRef Name="id_ofertas_contactos" />
+    </Key>
+    <Property Name="id_ofertas_contactos" Type="int" Nullable="false" />
+    <Property Name="id_oferta" Type="int" />
+    <Property Name="id_contacto" Type="int" />
+  </EntityType>
+  <EntityType Name="Proyecto_Contactos">
+    <Key>
+      <PropertyRef Name="id_proyecto_contactos" />
+    </Key>
+    <Property Name="id_proyecto_contactos" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="id_contacto" Type="int" />
+    <Property Name="id_proyecto" Type="int" />
+  </EntityType>
+  <EntityType Name="Proyecto_Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id_proyecto" Type="int" />
+    <Property Name="id_usuario" Type="int" />
+  </EntityType>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="id_proyecto" />
+    </Key>
+    <Property Name="id_proyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="nombre_estudio" Type="varchar" MaxLength="500" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="responsable" Type="varchar" MaxLength="500" />
+    <Property Name="anho" Type="varchar" MaxLength="500" />
+    <Property Name="pais" Type="varchar" MaxLength="500" />
+    <Property Name="fecha_recepcion" Type="varchar" MaxLength="500" />
+    <Property Name="fecha_presentacion" Type="varchar" MaxLength="500" />
+    <Property Name="estado" Type="varchar" MaxLength="500" />
+    <Property Name="id_oferta" Type="int" />
+    <Property Name="notas" Type="varchar" MaxLength="350" />
+    <Property Name="observacion" Type="varchar" MaxLength="350" />
+    <Property Name="jefe_campo" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SISCOP.dbo.Proyectos_Contactos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Proyectos_Contactos">
+          <Property Name="id_proyecto_contacto" Type="int" />
+          <Property Name="id_proyecto" Type="int" />
+          <Property Name="id_contacto" Type="int" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tareas">
+    <Key>
+      <PropertyRef Name="id_tarea" />
+    </Key>
+    <Property Name="id_tarea" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="350" />
+    <Property Name="fecha_inicio" Type="varchar" MaxLength="350" />
+    <Property Name="fecha_final" Type="varchar" MaxLength="350" />
+    <Property Name="estado" Type="varchar" MaxLength="350" />
+    <Property Name="prioridad" Type="varchar" MaxLength="350" />
+    <Property Name="id_etapa" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SISCOP.dbo.Telefonos_Clientes' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Telefonos_Clientes">
+          <Property Name="id_telefono_cliente" Type="int" />
+          <Property Name="numero" Type="int" />
+          <Property Name="id_cliente" Type="int" />
+        </EntityType>-->
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SISCOP.dbo.Telefonos_Contactos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Telefonos_Contactos">
+          <Property Name="id_telefono_contacto" Type="int" />
+          <Property Name="numero" Type="int" />
+          <Property Name="id_contacto" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_usuario" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="rol" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Asignar_Proyecto_Usuario_Proyectos">
+    <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="0..1" />
+    <End Role="Proyecto_Usuario" Type="Self.Proyecto_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyectos">
+        <PropertyRef Name="id_proyecto" />
+      </Principal>
+      <Dependent Role="Proyecto_Usuario">
+        <PropertyRef Name="id_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_Proyecto_Usuario_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Proyecto_Usuario" Type="Self.Proyecto_Usuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Proyecto_Usuario">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_tarea_etapa_proyecto_Etapas">
+    <End Role="Etapas" Type="Self.Etapas" Multiplicity="0..1" />
+    <End Role="Etapa_Tarea" Type="Self.Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etapas">
+        <PropertyRef Name="id_etapa" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_etapa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_tarea_etapa_proyecto_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Etapa_Tarea" Type="Self.Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Etapa_Tarea_Tareas">
+    <End Role="Tareas" Type="Self.Tareas" Multiplicity="0..1" />
+    <End Role="Etapa_Tarea" Type="Self.Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tareas">
+        <PropertyRef Name="id_tarea" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_tarea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Etapas_Proyectos">
+    <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="0..1" />
+    <End Role="Etapas" Type="Self.Etapas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyectos">
+        <PropertyRef Name="id_proyecto" />
+      </Principal>
+      <Dependent Role="Etapas">
+        <PropertyRef Name="id_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ofertas_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Ofertas" Type="Self.Ofertas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Ofertas">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ofertas_Contactos_Contactos">
+    <End Role="Contactos" Type="Self.Contactos" Multiplicity="0..1" />
+    <End Role="Ofertas_Contactos" Type="Self.Ofertas_Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contactos">
+        <PropertyRef Name="id_contacto" />
+      </Principal>
+      <Dependent Role="Ofertas_Contactos">
+        <PropertyRef Name="id_oferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ofertas_Contactos_Ofertas">
+    <End Role="Ofertas" Type="Self.Ofertas" Multiplicity="0..1" />
+    <End Role="Ofertas_Contactos" Type="Self.Ofertas_Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ofertas">
+        <PropertyRef Name="id_oferta" />
+      </Principal>
+      <Dependent Role="Ofertas_Contactos">
+        <PropertyRef Name="id_oferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyecto_Contactos_Contactos">
+    <End Role="Contactos" Type="Self.Contactos" Multiplicity="0..1" />
+    <End Role="Proyecto_Contactos" Type="Self.Proyecto_Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contactos">
+        <PropertyRef Name="id_contacto" />
+      </Principal>
+      <Dependent Role="Proyecto_Contactos">
+        <PropertyRef Name="id_contacto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyecto_Contactos_Proyectos">
+    <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="0..1" />
+    <End Role="Proyecto_Contactos" Type="Self.Proyecto_Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyectos">
+        <PropertyRef Name="id_proyecto" />
+      </Principal>
+      <Dependent Role="Proyecto_Contactos">
+        <PropertyRef Name="id_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyectos_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Proyectos">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyectos_Ofertas">
+    <End Role="Ofertas" Type="Self.Ofertas" Multiplicity="0..1" />
+    <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ofertas">
+        <PropertyRef Name="id_oferta" />
+      </Principal>
+      <Dependent Role="Proyectos">
+        <PropertyRef Name="id_oferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SISCOPModelStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contactos" EntityType="Self.Contactos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Etapa_Tarea" EntityType="Self.Etapa_Tarea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Etapas" EntityType="Self.Etapas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ofertas" EntityType="Self.Ofertas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ofertas_Contactos" EntityType="Self.Ofertas_Contactos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proyecto_Contactos" EntityType="Self.Proyecto_Contactos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proyecto_Usuario" EntityType="Self.Proyecto_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tareas" EntityType="Self.Tareas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Asignar_Proyecto_Usuario_Proyectos" Association="Self.FK_Asignar_Proyecto_Usuario_Proyectos">
+      <End Role="Proyectos" EntitySet="Proyectos" />
+      <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_Proyecto_Usuario_Usuarios" Association="Self.FK_Asignar_Proyecto_Usuario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_tarea_etapa_proyecto_Etapas" Association="Self.FK_Asignar_tarea_etapa_proyecto_Etapas">
+      <End Role="Etapas" EntitySet="Etapas" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_tarea_etapa_proyecto_Usuarios" Association="Self.FK_Asignar_tarea_etapa_proyecto_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Etapa_Tarea_Tareas" Association="Self.FK_Etapa_Tarea_Tareas">
+      <End Role="Tareas" EntitySet="Tareas" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Etapas_Proyectos" Association="Self.FK_Etapas_Proyectos">
+      <End Role="Proyectos" EntitySet="Proyectos" />
+      <End Role="Etapas" EntitySet="Etapas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ofertas_Clientes" Association="Self.FK_Ofertas_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Ofertas" EntitySet="Ofertas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ofertas_Contactos_Contactos" Association="Self.FK_Ofertas_Contactos_Contactos">
+      <End Role="Contactos" EntitySet="Contactos" />
+      <End Role="Ofertas_Contactos" EntitySet="Ofertas_Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ofertas_Contactos_Ofertas" Association="Self.FK_Ofertas_Contactos_Ofertas">
+      <End Role="Ofertas" EntitySet="Ofertas" />
+      <End Role="Ofertas_Contactos" EntitySet="Ofertas_Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyecto_Contactos_Contactos" Association="Self.FK_Proyecto_Contactos_Contactos">
+      <End Role="Contactos" EntitySet="Contactos" />
+      <End Role="Proyecto_Contactos" EntitySet="Proyecto_Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyecto_Contactos_Proyectos" Association="Self.FK_Proyecto_Contactos_Proyectos">
+      <End Role="Proyectos" EntitySet="Proyectos" />
+      <End Role="Proyecto_Contactos" EntitySet="Proyecto_Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyectos_Clientes" Association="Self.FK_Proyectos_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Proyectos" EntitySet="Proyectos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyectos_Ofertas" Association="Self.FK_Proyectos_Ofertas">
+      <End Role="Ofertas" EntitySet="Ofertas" />
+      <End Role="Proyectos" EntitySet="Proyectos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

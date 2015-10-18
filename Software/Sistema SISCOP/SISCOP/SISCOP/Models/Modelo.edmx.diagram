@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0dee77f279e54446915380c8e69b3154" Name="Diagram1">
+        <EntityTypeShape EntityType="SISCOPModel.Cliente" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Contacto" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Etapa_Tarea" Width="1.5" PointX="12.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Etapa" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Oferta" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Ofertas_Contactos" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Proyecto_Contactos" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Proyecto_Usuario" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Proyecto" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.sysdiagram" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Tarea" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISCOPModel.Usuario" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
+        <AssociationConnector Association="SISCOPModel.FK_Ofertas_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Proyectos_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Ofertas_Contactos_Contactos" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Proyecto_Contactos_Contactos" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Etapas" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Etapa_Tarea_Tareas" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Etapas_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Ofertas_Contactos_Ofertas" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Proyectos_Ofertas" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Proyecto_Contactos_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Asignar_Proyecto_Usuario_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SISCOPModel.FK_Asignar_Proyecto_Usuario_Usuarios" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
