@@ -4,10 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Listado Proyectos</h2>
+<div style="padding-right: 30px;padding-bottom:20px">
+    <input type="text" style="float:right; display:inline-block">
+    <label style="float: right; display: inline-block;">Buscar   &nbsp;&nbsp;</label>
+</div>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create Nuevo", "Create")
 </p>
 <table class="table table-striped">
     <tr>
@@ -80,9 +84,9 @@
                @Html.ActionLink("Ver Etapas", "Index","Etapa", new { id = item.id_proyecto },null)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.id_proyecto  }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id_proyecto }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id_proyecto })
+                @Html.ActionLink("Editar", "Edit", new {  id=item.id_proyecto  }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_proyecto }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_proyecto })
             </td>
         </tr>
     }

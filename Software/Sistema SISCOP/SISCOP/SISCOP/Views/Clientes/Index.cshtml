@@ -4,10 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Listado de Clientes</h2>
+<div style="padding-right: 30px;padding-bottom:20px">
+    <input type="text" style="float:right; display:inline-block">
+    <label style="float: right; display: inline-block;">Buscar   &nbsp;&nbsp;</label>
+</div>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nuevo cliente", "Create")
 </p>
 <table class="table table-striped">
     <tr>
@@ -66,9 +70,9 @@
                 @Html.DisplayFor(modelItem => item.direccion)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id_cliente }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id_cliente }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id_cliente })
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_cliente }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.id_cliente }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_cliente })
             </td>
         </tr>
     }
