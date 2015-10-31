@@ -1,0 +1,68 @@
+﻿@model SistemaSISCOP.Models.Etapas
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Etapas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_etapa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_etapa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Proyectos.nombre_estudio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Proyectos.nombre_estudio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_inicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_inicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_final)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_final)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.encargado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.encargado)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

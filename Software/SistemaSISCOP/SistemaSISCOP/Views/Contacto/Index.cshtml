@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SistemaSISCOP.Models.Contactos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="datagrid table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_contacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.puesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefonos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.pais)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_contacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.puesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefonos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.pais)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_contacto }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_contacto }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_contacto })
+            </td>
+        </tr>
+    }
+
+</table>

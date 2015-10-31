@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SISCOPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pais" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="web" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fax" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="correo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Contactos" Relationship="SISCOPModel.FK_Contactos_Clientes" FromRole="Clientes" ToRole="Contactos" />
+    <NavigationProperty Name="Ofertas" Relationship="SISCOPModel.FK_Ofertas_Clientes" FromRole="Clientes" ToRole="Ofertas" />
+    <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Proyectos_Clientes" FromRole="Clientes" ToRole="Proyectos" />
+  </EntityType>
+  <EntityType Name="Contactos">
+    <Key>
+      <PropertyRef Name="id_contacto" />
+    </Key>
+    <Property Name="id_contacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pais" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="puesto" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="telefonos" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="id_cliente" Type="Int32" />
+    <NavigationProperty Name="Clientes" Relationship="SISCOPModel.FK_Contactos_Clientes" FromRole="Contactos" ToRole="Clientes" />
+  </EntityType>
+  <EntityType Name="Estados_Proyectos">
+    <Key>
+      <PropertyRef Name="id_estado_proyecto" />
+    </Key>
+    <Property Name="id_estado_proyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Proyectos_EstadoProyecto" FromRole="Estados_Proyectos" ToRole="Proyectos" />
+  </EntityType>
+  <EntityType Name="Etapa_Tarea">
+    <Key>
+      <PropertyRef Name="id_etapa_tarea" />
+    </Key>
+    <Property Name="id_etapa_tarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_usuario" Type="Int32" />
+    <Property Name="id_tarea" Type="Int32" />
+    <Property Name="id_etapa" Type="Int32" />
+    <NavigationProperty Name="Etapas" Relationship="Self.FK_Asignar_tarea_etapa_proyecto_Etapas" FromRole="Etapa_Tarea" ToRole="Etapas" />
+    <NavigationProperty Name="Usuarios" Relationship="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios" FromRole="Etapa_Tarea" ToRole="Usuarios" />
+    <NavigationProperty Name="Tareas" Relationship="SISCOPModel.FK_Etapa_Tarea_Tareas" FromRole="Etapa_Tarea" ToRole="Tareas" />
+  </EntityType>
+  <EntityType Name="Etapas">
+    <Key>
+      <PropertyRef Name="id_etapa" />
+    </Key>
+    <Property Name="id_etapa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_proyecto" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_inicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="fecha_final" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="estado" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="encargado" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Etapa_Tarea" Relationship="Self.FK_Asignar_tarea_etapa_proyecto_Etapas" FromRole="Etapas" ToRole="Etapa_Tarea" />
+    <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Etapas_Proyectos" FromRole="Etapas" ToRole="Proyectos" />
+  </EntityType>
+  <EntityType Name="Proyecto_Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_proyecto" Type="Int32" />
+    <Property Name="id_usuario" Type="Int32" />
+    <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Asignar_Proyecto_Usuario_Proyectos" FromRole="Proyecto_Usuario" ToRole="Proyectos" />
+    <NavigationProperty Name="Usuarios" Relationship="SISCOPModel.FK_Proyecto_Usuario_Usuarios" FromRole="Proyecto_Usuario" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Asignar_tarea_etapa_proyecto_Etapas">
+    <End Role="Etapas" Type="Self.Etapas" Multiplicity="0..1" />
+    <End Role="Etapa_Tarea" Type="Self.Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etapas">
+        <PropertyRef Name="id_etapa" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_etapa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SISCOPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Contactos" EntityType="Self.Contactos" />
+    <EntitySet Name="Estados_Proyectos" EntityType="Self.Estados_Proyectos" />
+    <EntitySet Name="Etapa_Tarea" EntityType="Self.Etapa_Tarea" />
+    <EntitySet Name="Etapas" EntityType="Self.Etapas" />
+    <EntitySet Name="Proyecto_Usuario" EntityType="Self.Proyecto_Usuario" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Asignar_tarea_etapa_proyecto_Etapas" Association="Self.FK_Asignar_tarea_etapa_proyecto_Etapas">
+      <End Role="Etapas" EntitySet="Etapas" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <EntitySet Name="Responsables" EntityType="SISCOPModel.Responsables" />
+    <AssociationSet Name="FK_Contactos_Clientes" Association="SISCOPModel.FK_Contactos_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Contactos" EntitySet="Contactos" />
+    </AssociationSet>
+    <EntitySet Name="Estados_Ofertas" EntityType="SISCOPModel.Estados_Ofertas" />
+    <EntitySet Name="Ofertas" EntityType="SISCOPModel.Ofertas" />
+    <AssociationSet Name="FK_Ofertas_Clientes" Association="SISCOPModel.FK_Ofertas_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Ofertas" EntitySet="Ofertas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ofertas_Estados_Ofertas" Association="SISCOPModel.FK_Ofertas_Estados_Ofertas">
+      <End Role="Estados_Ofertas" EntitySet="Estados_Ofertas" />
+      <End Role="Ofertas" EntitySet="Ofertas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ofertas_Responsables" Association="SISCOPModel.FK_Ofertas_Responsables">
+      <End Role="Responsables" EntitySet="Responsables" />
+      <End Role="Ofertas" EntitySet="Ofertas" />
+    </AssociationSet>
+    <EntitySet Name="Proyectos" EntityType="SISCOPModel.Proyectos" />
+    <EntitySet Name="Usuarios" EntityType="SISCOPModel.Usuarios" />
+    <AssociationSet Name="FK_Proyectos_Clientes" Association="SISCOPModel.FK_Proyectos_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Proyectos" EntitySet="Proyectos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyectos_EstadoProyecto" Association="SISCOPModel.FK_Proyectos_EstadoProyecto">
+      <End Role="Estados_Proyectos" EntitySet="Estados_Proyectos" />
+      <End Role="Proyectos" EntitySet="Proyectos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_tarea_etapa_proyecto_Usuarios" Association="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Etapas_Proyectos" Association="SISCOPModel.FK_Etapas_Proyectos">
+      <End Role="Proyectos" EntitySet="Proyectos" />
+      <End Role="Etapas" EntitySet="Etapas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyectos_Ofertas" Association="SISCOPModel.FK_Proyectos_Ofertas">
+      <End Role="Ofertas" EntitySet="Ofertas" />
+      <End Role="Proyectos" EntitySet="Proyectos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_Proyecto_Usuario_Proyectos" Association="SISCOPModel.FK_Asignar_Proyecto_Usuario_Proyectos">
+      <End Role="Proyectos" EntitySet="Proyectos" />
+      <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proyecto_Usuario_Usuarios" Association="SISCOPModel.FK_Proyecto_Usuario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
+    </AssociationSet>
+    <EntitySet Name="Prioridad_Etapa" EntityType="SISCOPModel.Prioridad_Etapa" />
+    <EntitySet Name="Tareas" EntityType="SISCOPModel.Tareas" />
+    <AssociationSet Name="FK_Etapa_Tarea_Tareas" Association="SISCOPModel.FK_Etapa_Tarea_Tareas">
+      <End Role="Tareas" EntitySet="Tareas" />
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tareas_Prioridad_Etapa" Association="SISCOPModel.FK_Tareas_Prioridad_Etapa">
+      <End Role="Prioridad_Etapa" EntitySet="Prioridad_Etapa" />
+      <End Role="Tareas" EntitySet="Tareas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Responsables">
+    <Key>
+      <PropertyRef Name="id_responsable" />
+    </Key>
+    <Property Name="id_responsable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ofertas" Relationship="SISCOPModel.FK_Ofertas_Responsables" FromRole="Responsables" ToRole="Ofertas" />
+  </EntityType>
+  <Association Name="FK_Contactos_Clientes">
+    <End Type="SISCOPModel.Clientes" Role="Clientes" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Contactos" Role="Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Contactos">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Estados_Ofertas">
+    <Key>
+      <PropertyRef Name="id_estado_oferta" />
+    </Key>
+    <Property Name="id_estado_oferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ofertas" Relationship="SISCOPModel.FK_Ofertas_Estados_Ofertas" FromRole="Estados_Ofertas" ToRole="Ofertas" />
+  </EntityType>
+  <EntityType Name="Ofertas">
+    <Key>
+      <PropertyRef Name="id_oferta" />
+    </Key>
+    <Property Name="id_oferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="id_responsable" Type="Int32" />
+    <Property Name="anho" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_recepcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_presentacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="id_estado_oferta" Type="Int32" />
+    <Property Name="nota" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="observacion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="id_cliente" Type="Int32" />
+    <NavigationProperty Name="Clientes" Relationship="SISCOPModel.FK_Ofertas_Clientes" FromRole="Ofertas" ToRole="Clientes" />
+    <NavigationProperty Name="Estados_Ofertas" Relationship="SISCOPModel.FK_Ofertas_Estados_Ofertas" FromRole="Ofertas" ToRole="Estados_Ofertas" />
+    <NavigationProperty Name="Responsables" Relationship="SISCOPModel.FK_Ofertas_Responsables" FromRole="Ofertas" ToRole="Responsables" />
+    <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Proyectos_Ofertas" FromRole="Ofertas" ToRole="Proyectos" />
+  </EntityType>
+  <Association Name="FK_Ofertas_Clientes">
+    <End Type="SISCOPModel.Clientes" Role="Clientes" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Ofertas" Role="Ofertas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Ofertas">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ofertas_Estados_Ofertas">
+    <End Type="SISCOPModel.Estados_Ofertas" Role="Estados_Ofertas" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Ofertas" Role="Ofertas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados_Ofertas">
+        <PropertyRef Name="id_estado_oferta" />
+      </Principal>
+      <Dependent Role="Ofertas">
+        <PropertyRef Name="id_estado_oferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ofertas_Responsables">
+    <End Type="SISCOPModel.Responsables" Role="Responsables" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Ofertas" Role="Ofertas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsables">
+        <PropertyRef Name="id_responsable" />
+      </Principal>
+      <Dependent Role="Ofertas">
+        <PropertyRef Name="id_responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="id_proyecto" />
+    </Key>
+    <Property Name="id_proyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="id_cliente" Type="Int32" />
+    <Property Name="nombre_estudio" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="directorProyecto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="anho" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_recepcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_presentacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="id_estado_proyecto" Type="Int32" />
+    <Property Name="id_oferta" Type="Int32" />
+    <Property Name="notas" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="observacion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="jefe_campo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="SISCOPModel.FK_Proyectos_Clientes" FromRole="Proyectos" ToRole="Clientes" />
+    <NavigationProperty Name="Estados_Proyectos" Relationship="SISCOPModel.FK_Proyectos_EstadoProyecto" FromRole="Proyectos" ToRole="Estados_Proyectos" />
+    <NavigationProperty Name="Etapas" Relationship="SISCOPModel.FK_Etapas_Proyectos" FromRole="Proyectos" ToRole="Etapas" />
+    <NavigationProperty Name="Ofertas" Relationship="SISCOPModel.FK_Proyectos_Ofertas" FromRole="Proyectos" ToRole="Ofertas" />
+    <NavigationProperty Name="Proyecto_Usuario" Relationship="SISCOPModel.FK_Asignar_Proyecto_Usuario_Proyectos" FromRole="Proyectos" ToRole="Proyecto_Usuario" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_usuario" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Etapa_Tarea" Relationship="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios" FromRole="Usuarios" ToRole="Etapa_Tarea" />
+    <NavigationProperty Name="Proyecto_Usuario" Relationship="SISCOPModel.FK_Proyecto_Usuario_Usuarios" FromRole="Usuarios" ToRole="Proyecto_Usuario" />
+  </EntityType>
+  <Association Name="FK_Proyectos_Clientes">
+    <End Type="SISCOPModel.Clientes" Role="Clientes" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Proyectos" Role="Proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Proyectos">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyectos_EstadoProyecto">
+    <End Type="SISCOPModel.Estados_Proyectos" Role="Estados_Proyectos" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Proyectos" Role="Proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados_Proyectos">
+        <PropertyRef Name="id_estado_proyecto" />
+      </Principal>
+      <Dependent Role="Proyectos">
+        <PropertyRef Name="id_estado_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_tarea_etapa_proyecto_Usuarios">
+    <End Type="SISCOPModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Etapa_Tarea" Role="Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Etapas_Proyectos">
+    <End Type="SISCOPModel.Proyectos" Role="Proyectos" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Etapas" Role="Etapas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyectos">
+        <PropertyRef Name="id_proyecto" />
+      </Principal>
+      <Dependent Role="Etapas">
+        <PropertyRef Name="id_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyectos_Ofertas">
+    <End Type="SISCOPModel.Ofertas" Role="Ofertas" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Proyectos" Role="Proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ofertas">
+        <PropertyRef Name="id_oferta" />
+      </Principal>
+      <Dependent Role="Proyectos">
+        <PropertyRef Name="id_oferta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_Proyecto_Usuario_Proyectos">
+    <End Type="SISCOPModel.Proyectos" Role="Proyectos" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Proyecto_Usuario" Role="Proyecto_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyectos">
+        <PropertyRef Name="id_proyecto" />
+      </Principal>
+      <Dependent Role="Proyecto_Usuario">
+        <PropertyRef Name="id_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proyecto_Usuario_Usuarios">
+    <End Type="SISCOPModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Proyecto_Usuario" Role="Proyecto_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Proyecto_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Prioridad_Etapa">
+    <Key>
+      <PropertyRef Name="id_prioridad" />
+    </Key>
+    <Property Name="id_prioridad" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tareas" Relationship="SISCOPModel.FK_Tareas_Prioridad_Etapa" FromRole="Prioridad_Etapa" ToRole="Tareas" />
+  </EntityType>
+  <EntityType Name="Tareas">
+    <Key>
+      <PropertyRef Name="id_tarea" />
+    </Key>
+    <Property Name="id_tarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_inicio" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_final" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="id_prioridad" Type="Int32" />
+    <NavigationProperty Name="Etapa_Tarea" Relationship="SISCOPModel.FK_Etapa_Tarea_Tareas" FromRole="Tareas" ToRole="Etapa_Tarea" />
+    <NavigationProperty Name="Prioridad_Etapa" Relationship="SISCOPModel.FK_Tareas_Prioridad_Etapa" FromRole="Tareas" ToRole="Prioridad_Etapa" />
+  </EntityType>
+  <Association Name="FK_Etapa_Tarea_Tareas">
+    <End Type="SISCOPModel.Tareas" Role="Tareas" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Etapa_Tarea" Role="Etapa_Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tareas">
+        <PropertyRef Name="id_tarea" />
+      </Principal>
+      <Dependent Role="Etapa_Tarea">
+        <PropertyRef Name="id_tarea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tareas_Prioridad_Etapa">
+    <End Type="SISCOPModel.Prioridad_Etapa" Role="Prioridad_Etapa" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Tareas" Role="Tareas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prioridad_Etapa">
+        <PropertyRef Name="id_prioridad" />
+      </Principal>
+      <Dependent Role="Tareas">
+        <PropertyRef Name="id_prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

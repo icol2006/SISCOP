@@ -1,0 +1,66 @@
+﻿@using SistemaSISCOP;
+@model SistemaSISCOP.Models.ViewEtapasTareas 
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+<table>
+
+    <tr>
+
+        <th>Id</th>
+
+        <th>Code</th>
+
+        <th>Name</th>
+
+    </tr>
+
+    @foreach (var cliente in Model.Clientes)
+    {
+
+        <tr>
+
+            <td>@cliente.pais</td>
+
+            <td>@cliente.nombre</td>
+
+            <td>@cliente.correo</td>
+
+        </tr>
+
+    }
+
+</table>
+
+<table>
+
+    <tr>
+
+        <th>Id</th>
+
+        <th>Code</th>
+
+        <th>Name</th>
+
+    </tr>
+
+    @foreach (var contancto in Model.Contactos)
+    {
+
+        <tr>
+
+            <td>@contancto.pais</td>
+
+            <td>@contancto.nombre</td>
+
+            <td>@contancto.correo</td>
+
+        </tr>
+
+    }
+
+</table>
+

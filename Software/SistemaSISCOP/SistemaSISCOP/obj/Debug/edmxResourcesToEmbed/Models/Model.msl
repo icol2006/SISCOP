@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SISCOPModelStoreContainer" CdmEntityContainer="SISCOPEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="SISCOPModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contactos">
+      <EntityTypeMapping TypeName="SISCOPModel.Contactos">
+        <MappingFragment StoreEntitySet="Contactos">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="puesto" ColumnName="puesto" />
+          <ScalarProperty Name="telefonos" ColumnName="telefonos" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados_Proyectos">
+      <EntityTypeMapping TypeName="SISCOPModel.Estados_Proyectos">
+        <MappingFragment StoreEntitySet="Estados_Proyectos">
+          <ScalarProperty Name="id_estado_proyecto" ColumnName="id_estado_proyecto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etapa_Tarea">
+      <EntityTypeMapping TypeName="SISCOPModel.Etapa_Tarea">
+        <MappingFragment StoreEntitySet="Etapa_Tarea">
+          <ScalarProperty Name="id_etapa_tarea" ColumnName="id_etapa_tarea" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_tarea" ColumnName="id_tarea" />
+          <ScalarProperty Name="id_etapa" ColumnName="id_etapa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etapas">
+      <EntityTypeMapping TypeName="SISCOPModel.Etapas">
+        <MappingFragment StoreEntitySet="Etapas">
+          <ScalarProperty Name="id_etapa" ColumnName="id_etapa" />
+          <ScalarProperty Name="id_proyecto" ColumnName="id_proyecto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="encargado" ColumnName="encargado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyecto_Usuario">
+      <EntityTypeMapping TypeName="SISCOPModel.Proyecto_Usuario">
+        <MappingFragment StoreEntitySet="Proyecto_Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_proyecto" ColumnName="id_proyecto" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SISCOPModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responsables">
+      <EntityTypeMapping TypeName="SISCOPModel.Responsables">
+        <MappingFragment StoreEntitySet="Responsables">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados_Ofertas">
+      <EntityTypeMapping TypeName="SISCOPModel.Estados_Ofertas">
+        <MappingFragment StoreEntitySet="Estados_Ofertas">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_estado_oferta" ColumnName="id_estado_oferta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ofertas">
+      <EntityTypeMapping TypeName="SISCOPModel.Ofertas">
+        <MappingFragment StoreEntitySet="Ofertas">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="id_estado_oferta" ColumnName="id_estado_oferta" />
+          <ScalarProperty Name="fecha_presentacion" ColumnName="fecha_presentacion" />
+          <ScalarProperty Name="fecha_recepcion" ColumnName="fecha_recepcion" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="anho" ColumnName="anho" />
+          <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="id_oferta" ColumnName="id_oferta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyectos">
+      <EntityTypeMapping TypeName="SISCOPModel.Proyectos">
+        <MappingFragment StoreEntitySet="Proyectos">
+          <ScalarProperty Name="jefe_campo" ColumnName="jefe_campo" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="notas" ColumnName="notas" />
+          <ScalarProperty Name="id_oferta" ColumnName="id_oferta" />
+          <ScalarProperty Name="id_estado_proyecto" ColumnName="id_estado_proyecto" />
+          <ScalarProperty Name="fecha_presentacion" ColumnName="fecha_presentacion" />
+          <ScalarProperty Name="fecha_recepcion" ColumnName="fecha_recepcion" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="anho" ColumnName="anho" />
+          <ScalarProperty Name="directorProyecto" ColumnName="directorProyecto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_estudio" ColumnName="nombre_estudio" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="id_proyecto" ColumnName="id_proyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="SISCOPModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prioridad_Etapa">
+      <EntityTypeMapping TypeName="SISCOPModel.Prioridad_Etapa">
+        <MappingFragment StoreEntitySet="Prioridad_Etapa">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_prioridad" ColumnName="id_prioridad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tareas">
+      <EntityTypeMapping TypeName="SISCOPModel.Tareas">
+        <MappingFragment StoreEntitySet="Tareas">
+          <ScalarProperty Name="id_prioridad" ColumnName="id_prioridad" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_tarea" ColumnName="id_tarea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,98 @@
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.dll.config
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.pdb
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\Antlr3.Runtime.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\EntityFramework.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\Microsoft.Web.Infrastructure.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\Newtonsoft.Json.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.Formatting.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.WebRequest.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.WebHost.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Mvc.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Optimization.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Providers.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Razor.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Deployment.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Razor.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\WebGrease.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\EntityFramework.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\Newtonsoft.Json.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.Formatting.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.WebRequest.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.WebHost.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Mvc.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Razor.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Deployment.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Razor.xml
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\EntityFramework.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.Formatting.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.WebRequest.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Http.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Http.WebHost.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Mvc.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Optimization.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Providers.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Razor.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.Deployment.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.Razor.resources.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.dll
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.pdb
+Z:\SISCOP\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.csprojResolveAssemblyReference.cache
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.dll.config
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\SistemaSISCOP.pdb
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\Antlr3.Runtime.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\EntityFramework.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\Microsoft.Web.Infrastructure.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\Newtonsoft.Json.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.Formatting.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.WebRequest.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.WebHost.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Mvc.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Optimization.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Providers.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Razor.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Deployment.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Razor.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\WebGrease.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\EntityFramework.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\Newtonsoft.Json.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.Formatting.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Net.Http.WebRequest.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Http.WebHost.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Mvc.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.Razor.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Deployment.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\System.Web.WebPages.Razor.xml
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\EntityFramework.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.Formatting.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Net.Http.WebRequest.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Http.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Http.WebHost.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Mvc.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Optimization.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Providers.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.Razor.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.Deployment.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\bin\es\System.Web.WebPages.Razor.resources.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.csprojResolveAssemblyReference.cache
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.dll
+Z:\Desarrollo de Aplicaciones\SISCOP\Software\SistemaSISCOP\SistemaSISCOP\obj\Debug\SistemaSISCOP.pdb

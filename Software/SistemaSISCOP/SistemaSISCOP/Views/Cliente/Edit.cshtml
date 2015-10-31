@@ -1,0 +1,90 @@
+﻿@model SistemaSISCOP.Models.Clientes
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Clientes</legend>
+
+
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.id_cliente)
+            @Html.ValidationMessageFor(model => model.id_cliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pais)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pais)
+            @Html.ValidationMessageFor(model => model.pais)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.web)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.web)
+            @Html.ValidationMessageFor(model => model.web)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fax)
+            @Html.ValidationMessageFor(model => model.fax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono)
+            @Html.ValidationMessageFor(model => model.telefono)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.correo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.correo)
+            @Html.ValidationMessageFor(model => model.correo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion)
+            @Html.ValidationMessageFor(model => model.direccion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

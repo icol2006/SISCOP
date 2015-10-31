@@ -1,0 +1,116 @@
+﻿@model SistemaSISCOP.Models.Ofertas
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ofertas</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.codigo)
+            @Html.ValidationMessageFor(model => model.codigo)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcion)
+            @Html.ValidationMessageFor(model => model.descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_responsable, "Responsables")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("id_responsable", String.Empty)
+            @Html.ValidationMessageFor(model => model.id_responsable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.anho)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.anho)
+            @Html.ValidationMessageFor(model => model.anho)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pais)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pais)
+            @Html.ValidationMessageFor(model => model.pais)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_recepcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_recepcion)
+            @Html.ValidationMessageFor(model => model.fecha_recepcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_presentacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_presentacion)
+            @Html.ValidationMessageFor(model => model.fecha_presentacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_estado_oferta, "Estados_Ofertas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("id_estado_oferta", String.Empty)
+            @Html.ValidationMessageFor(model => model.id_estado_oferta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nota)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nota)
+            @Html.ValidationMessageFor(model => model.nota)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.observacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.observacion)
+            @Html.ValidationMessageFor(model => model.observacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_cliente, "Clientes")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("id_cliente", String.Empty)
+            @Html.ValidationMessageFor(model => model.id_cliente)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

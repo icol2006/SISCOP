@@ -1,0 +1,92 @@
+﻿@model SistemaSISCOP.Models.Ofertas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ofertas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_oferta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_oferta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Responsables.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Responsables.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.anho)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.anho)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pais)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_recepcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_recepcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_presentacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_presentacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estados_Ofertas.descripion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estados_Ofertas.descripion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nota)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nota)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clientes.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clientes.pais)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

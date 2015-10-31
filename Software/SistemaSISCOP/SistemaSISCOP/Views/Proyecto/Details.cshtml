@@ -1,0 +1,113 @@
+﻿@model SistemaSISCOP.Models.Proyectos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Proyectos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_proyecto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_proyecto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clientes.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clientes.pais)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre_estudio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre_estudio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.directorProyecto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.directorProyecto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.anho)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.anho)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pais)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_recepcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_recepcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_presentacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_presentacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estados_Proyectos.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estados_Proyectos.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ofertas.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ofertas.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.notas)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.notas)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jefe_campo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jefe_campo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

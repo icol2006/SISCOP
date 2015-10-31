@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SistemaSISCOP.Models.Proyectos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="datagrid table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_proyecto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_estudio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.directorProyecto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_recepcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_presentacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estados_Proyectos.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ofertas.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jefe_campo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_proyecto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_estudio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.directorProyecto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_recepcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_presentacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estados_Proyectos.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ofertas.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jefe_campo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_proyecto }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_proyecto }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_proyecto })
+            </td>
+        </tr>
+    }
+
+</table>
