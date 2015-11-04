@@ -55,11 +55,18 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Tareas, "Prioridad_Etapa")
+            @Html.LabelFor(model => model.Tareas.prioridad)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("id_prioridad", String.Empty)
-            @Html.ValidationMessageFor(model => model.Tareas.id_prioridad)
+            @Html.DropDownListFor(model => model.Tareas.prioridad, new SelectList(
+                  new List<Object>{
+                       new { value = "Alta" , text = "Alta"  },
+                       new { value = "Media" , text = "Media" },
+                       new { value = "Baja" , text = "Baja"}
+                    },
+                  "value",
+                  "text",
+                   2))
         </div>
 
         <div class="editor-label">

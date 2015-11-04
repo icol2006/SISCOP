@@ -1,4 +1,4 @@
-﻿@model SistemaSISCOP.Models.Tareas
+﻿@model SistemaSISCOP.Models.ViewEtapaTarea
 
 @{
     ViewBag.Title = "Details";
@@ -7,14 +7,8 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Tareas</legend>
+    <legend>ViewEtapaTarea</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.id_tarea)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.id_tarea)
-    </div>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.descripcion)
@@ -44,11 +38,26 @@
         @Html.DisplayFor(model => model.estado)
     </div>
 
+
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Prioridad_Etapa.descripcion)
+         @Html.DisplayNameFor(model => model.nombre_usuario)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Prioridad_Etapa.descripcion)
+        @Html.DisplayFor(model => model.nombre_usuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.prioridad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.prioridad)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.nombreEtapa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreEtapa)
     </div>
 </fieldset>
 <p>

@@ -28,5 +28,6 @@ namespace SistemaSISCOP.Models
     
         public virtual ICollection<Etapa_Tarea> Etapa_Tarea { get; set; }
         public virtual ICollection<Proyecto_Usuario> Proyecto_Usuario { get; set; }
+        public virtual Proyecto_Usuario Proyecto_Usuario1 { get; set; }
     }
 }

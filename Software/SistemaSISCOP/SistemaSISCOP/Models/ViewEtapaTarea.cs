@@ -18,12 +18,16 @@ namespace SistemaSISCOP.Models
         public string fecha_final { get; set; }
         [Display(Name = "Estado")]
         public string estado { get; set; }
-        [Display(Name = "Id")]
+        [Display(Name = "id_usuario")]
         public int id_usuario { get; set; }
-        [Display(Name = "Usuario-Id")]
+        [Display(Name = "Usuario")]
         public string nombre_usuario { get; set; }
         [Display(Name = "Prioridad")]
         public string prioridad { get; set; }
+        
+        public int id_etapa { get; set; }
+        [Display(Name = "Etapa")]
+        public string nombreEtapa { get; set; }
 
     }
 }

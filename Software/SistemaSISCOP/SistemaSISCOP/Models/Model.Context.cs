@@ -37,7 +37,7 @@ namespace SistemaSISCOP.Models
         public DbSet<Ofertas> Ofertas { get; set; }
         public DbSet<Proyectos> Proyectos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
-        public DbSet<Prioridad_Etapa> Prioridad_Etapa { get; set; }
+        public DbSet<Comentarios> Comentarios { get; set; }
         public DbSet<Tareas> Tareas { get; set; }
     }
 }

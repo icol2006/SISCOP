@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html class="k-ff k-ff41 js ">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/kendo.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    
+    <body>
+        <!-- Google Tag Manager -->
+        <!-- End Google Tag Manager -->
+        <div class="container-fluid">
+            <!--open container-->
+            <div class="row row-offcanvas row-offcanvas-left">
+                <!--open row-->
+                <div id="nav-section" class="col-xs-12 column">
+                    <!--open nav column-->
+                    <div class="navbar-default">
+                        <button id="toggle-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <h1 id="dash-logo" class="center-block">SISCOP</h1>
+                    <div class="collapse navbar-collapse" id="sidebar-nav" role="navigation">
+                        <ul class="nav">
+                            <li>@Html.ActionLink("Ofertas", "Index", "Oferta")</li>
+                            <li>@Html.ActionLink("Proyectos", "Index", "Proyecto")</li>
+                            <li>@Html.ActionLink("Etapas", "Index", "Etapa")</li>
+                            <li>@Html.ActionLink("Tareas", "Index", "Tarea")</li>
+                            <li><a href="frmComentariosTarea.aspx">Comentarios</a></li>
+                            <li>@Html.ActionLink("Clientes", "Index", "Cliente")</li>
+                            <li>@Html.ActionLink("Contactos", "Index", "Contacto")</li>
+                            <li>@Html.ActionLink("Usuarios", "Index", "Usuario")</li>
+                        </ul>
+                        
+                    </div>
+                </div><!--close left column-->
+                <div id="main-section" class="col-xs-12 column">
+                    <!--open main column-->
+
+                    <div id="main-section-header" class="row">
+                        <h2>Sistema de control de ofertas de servicios y proyectos
+                            <span style="float: right;color:#1996E4">
+                                Proyecto&nbsp-&nbsp
+                                @{
+                                    @Html.Raw(HttpContext.Current.Session["proyecto_nombre"])
+                                }
+                                &nbsp&nbsp&nbsp&nbsp
+                            </span>
+
+                        </h2>
+                       
+                            
+                    
+                         
+                    
+                    </div>
+
+                    <div id="about" class="main-section-content row">
+
+                        
+
+                        
+                       
+                        @RenderBody()
+
+                    </div>
+
+
+
+                </div><!--close main column-->
+            </div><!--close row-->
+        </div><!--close container-->
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

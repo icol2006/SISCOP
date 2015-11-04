@@ -145,18 +145,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Prioridad_Etapa">
-      <EntityTypeMapping TypeName="SISCOPModel.Prioridad_Etapa">
-        <MappingFragment StoreEntitySet="Prioridad_Etapa">
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="id_prioridad" ColumnName="id_prioridad" />
+    <EntitySetMapping Name="Comentarios">
+      <EntityTypeMapping TypeName="SISCOPModel.Comentarios">
+        <MappingFragment StoreEntitySet="Comentarios">
+          <ScalarProperty Name="id_etapa_tarea" ColumnName="id_etapa_tarea" />
+          <ScalarProperty Name="texto" ColumnName="texto" />
+          <ScalarProperty Name="id_comentario" ColumnName="id_comentario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tareas">
       <EntityTypeMapping TypeName="SISCOPModel.Tareas">
         <MappingFragment StoreEntitySet="Tareas">
-          <ScalarProperty Name="id_prioridad" ColumnName="id_prioridad" />
+          <ScalarProperty Name="id_etapa" ColumnName="id_etapa" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
           <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />

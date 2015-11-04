@@ -13,7 +13,6 @@ namespace SistemaSISCOP.Models
         public Etapas Etapas { get; set; }
         public Tareas Tareas { get; set; }
         public Etapa_Tarea Etapa_Tarea { get; set; }
-        public Prioridad_Etapa Prioridad_Etapa { get; set; }
         public Usuarios Usuarios { get; set; }
 
     }

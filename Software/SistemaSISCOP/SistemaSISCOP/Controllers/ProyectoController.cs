@@ -18,6 +18,7 @@ namespace SistemaSISCOP.Controllers
 
         public ActionResult Index()
         {
+            
             var proyectos = db.Proyectos.Include(p => p.Clientes).Include(p => p.Estados_Proyectos).Include(p => p.Ofertas);
             return View(proyectos.ToList());
         }
@@ -91,6 +92,7 @@ namespace SistemaSISCOP.Controllers
         {
             if (ModelState.IsValid)
             {
+                Session["proyecto_nombre"] = proyectos.nombre_estudio;
                 db.Entry(proyectos).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -125,6 +127,12 @@ namespace SistemaSISCOP.Controllers
             db.Proyectos.Remove(proyectos);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult StartSesionProject(int id){
+            Session["proyecto_id"] = id+"";
+            Session["proyecto_nombre"] = db.Proyectos.Where(x => x.id_proyecto==id).FirstOrDefault().nombre_estudio;
+            return RedirectToAction("Index", "Etapa");
         }
 
         protected override void Dispose(bool disposing)

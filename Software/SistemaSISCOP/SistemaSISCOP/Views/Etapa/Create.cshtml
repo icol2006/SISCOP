@@ -14,11 +14,9 @@
         <legend>Etapas</legend>
 
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.id_proyecto, "Proyectos")
-        </div>
+
         <div class="editor-field">
-            @Html.DropDownList("id_proyecto", String.Empty)
+            @Html.LabelFor(model => model.id_proyecto)
             @Html.ValidationMessageFor(model => model.id_proyecto)
         </div>
 

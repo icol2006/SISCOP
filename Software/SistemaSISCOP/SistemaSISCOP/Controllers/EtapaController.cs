@@ -12,14 +12,15 @@ namespace SistemaSISCOP.Controllers
     public class EtapaController : Controller
     {
         private SISCOPEntities db = new SISCOPEntities();
-
+        
         //
         // GET: /Etapa/
 
         public ActionResult Index()
         {
-            var etapas = db.Etapas.Include(e => e.Proyectos);
-            return View(etapas.ToList());
+            int idProyecto = Convert.ToInt16(Session["proyecto_id"] as String);
+            var etapas = db.Etapas.Where(x => x.id_proyecto == idProyecto).Include(e => e.Proyectos).ToList();
+            return View(etapas);
         }
 
         //

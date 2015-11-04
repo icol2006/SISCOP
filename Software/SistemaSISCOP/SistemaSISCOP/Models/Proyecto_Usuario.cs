@@ -20,5 +20,6 @@ namespace SistemaSISCOP.Models
     
         public virtual Proyectos Proyectos { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        public virtual Usuarios Usuarios1 { get; set; }
     }
 }

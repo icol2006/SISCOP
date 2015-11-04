@@ -47,6 +47,7 @@
     <Property Name="id_etapa" Type="Int32" />
     <NavigationProperty Name="Etapas" Relationship="Self.FK_Asignar_tarea_etapa_proyecto_Etapas" FromRole="Etapa_Tarea" ToRole="Etapas" />
     <NavigationProperty Name="Usuarios" Relationship="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios" FromRole="Etapa_Tarea" ToRole="Usuarios" />
+    <NavigationProperty Name="Comentarios" Relationship="SISCOPModel.FK_Comentarios_Etapa_Tarea" FromRole="Etapa_Tarea" ToRole="Comentarios" />
     <NavigationProperty Name="Tareas" Relationship="SISCOPModel.FK_Etapa_Tarea_Tareas" FromRole="Etapa_Tarea" ToRole="Tareas" />
   </EntityType>
   <EntityType Name="Etapas">
@@ -72,6 +73,7 @@
     <Property Name="id_usuario" Type="Int32" />
     <NavigationProperty Name="Proyectos" Relationship="SISCOPModel.FK_Asignar_Proyecto_Usuario_Proyectos" FromRole="Proyecto_Usuario" ToRole="Proyectos" />
     <NavigationProperty Name="Usuarios" Relationship="SISCOPModel.FK_Proyecto_Usuario_Usuarios" FromRole="Proyecto_Usuario" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios1" Relationship="SISCOPModel.FK_Asignar_Proyecto_Usuario_Usuarios" FromRole="Proyecto_Usuario" ToRole="Usuarios" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -156,15 +158,19 @@
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
     </AssociationSet>
-    <EntitySet Name="Prioridad_Etapa" EntityType="SISCOPModel.Prioridad_Etapa" />
+    <EntitySet Name="Comentarios" EntityType="SISCOPModel.Comentarios" />
+    <AssociationSet Name="FK_Comentarios_Etapa_Tarea" Association="SISCOPModel.FK_Comentarios_Etapa_Tarea">
+      <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asignar_Proyecto_Usuario_Usuarios" Association="SISCOPModel.FK_Asignar_Proyecto_Usuario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Proyecto_Usuario" EntitySet="Proyecto_Usuario" />
+    </AssociationSet>
     <EntitySet Name="Tareas" EntityType="SISCOPModel.Tareas" />
     <AssociationSet Name="FK_Etapa_Tarea_Tareas" Association="SISCOPModel.FK_Etapa_Tarea_Tareas">
       <End Role="Tareas" EntitySet="Tareas" />
       <End Role="Etapa_Tarea" EntitySet="Etapa_Tarea" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Tareas_Prioridad_Etapa" Association="SISCOPModel.FK_Tareas_Prioridad_Etapa">
-      <End Role="Prioridad_Etapa" EntitySet="Prioridad_Etapa" />
-      <End Role="Tareas" EntitySet="Tareas" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Responsables">
@@ -200,7 +206,7 @@
       <PropertyRef Name="id_oferta" />
     </Key>
     <Property Name="id_oferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codigo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="codigo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="id_responsable" Type="Int32" />
     <Property Name="anho" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -257,7 +263,7 @@
       <PropertyRef Name="id_proyecto" />
     </Key>
     <Property Name="id_proyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codigo" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="id_cliente" Type="Int32" />
     <Property Name="nombre_estudio" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -288,6 +294,7 @@
     <Property Name="rol" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Etapa_Tarea" Relationship="SISCOPModel.FK_Asignar_tarea_etapa_proyecto_Usuarios" FromRole="Usuarios" ToRole="Etapa_Tarea" />
     <NavigationProperty Name="Proyecto_Usuario" Relationship="SISCOPModel.FK_Proyecto_Usuario_Usuarios" FromRole="Usuarios" ToRole="Proyecto_Usuario" />
+    <NavigationProperty Name="Proyecto_Usuario1" Relationship="SISCOPModel.FK_Asignar_Proyecto_Usuario_Usuarios" FromRole="Usuarios" ToRole="Proyecto_Usuario" />
   </EntityType>
   <Association Name="FK_Proyectos_Clientes">
     <End Type="SISCOPModel.Clientes" Role="Clientes" Multiplicity="0..1" />
@@ -373,14 +380,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Prioridad_Etapa">
+  <EntityType Name="Comentarios">
     <Key>
-      <PropertyRef Name="id_prioridad" />
+      <PropertyRef Name="id_comentario" />
     </Key>
-    <Property Name="id_prioridad" Type="Int32" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Tareas" Relationship="SISCOPModel.FK_Tareas_Prioridad_Etapa" FromRole="Prioridad_Etapa" ToRole="Tareas" />
+    <Property Name="id_comentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="texto" Type="Int32" />
+    <Property Name="id_etapa_tarea" Type="Int32" />
+    <NavigationProperty Name="Etapa_Tarea" Relationship="SISCOPModel.FK_Comentarios_Etapa_Tarea" FromRole="Comentarios" ToRole="Etapa_Tarea" />
   </EntityType>
+  <Association Name="FK_Comentarios_Etapa_Tarea">
+    <End Type="SISCOPModel.Etapa_Tarea" Role="Etapa_Tarea" Multiplicity="0..1" />
+    <End Type="SISCOPModel.Comentarios" Role="Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etapa_Tarea">
+        <PropertyRef Name="id_etapa_tarea" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="id_etapa_tarea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asignar_Proyecto_Usuario_Usuarios">
+    <End Type="SISCOPModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="SISCOPModel.Proyecto_Usuario" Role="Proyecto_Usuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Proyecto_Usuario">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="Tareas">
     <Key>
       <PropertyRef Name="id_tarea" />
@@ -390,9 +422,9 @@
     <Property Name="fecha_inicio" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
     <Property Name="fecha_final" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
-    <Property Name="id_prioridad" Type="Int32" />
+    <Property Name="prioridad" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="id_etapa" Type="Int32" />
     <NavigationProperty Name="Etapa_Tarea" Relationship="SISCOPModel.FK_Etapa_Tarea_Tareas" FromRole="Tareas" ToRole="Etapa_Tarea" />
-    <NavigationProperty Name="Prioridad_Etapa" Relationship="SISCOPModel.FK_Tareas_Prioridad_Etapa" FromRole="Tareas" ToRole="Prioridad_Etapa" />
   </EntityType>
   <Association Name="FK_Etapa_Tarea_Tareas">
     <End Type="SISCOPModel.Tareas" Role="Tareas" Multiplicity="0..1" />
@@ -403,18 +435,6 @@
       </Principal>
       <Dependent Role="Etapa_Tarea">
         <PropertyRef Name="id_tarea" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Tareas_Prioridad_Etapa">
-    <End Type="SISCOPModel.Prioridad_Etapa" Role="Prioridad_Etapa" Multiplicity="0..1" />
-    <End Type="SISCOPModel.Tareas" Role="Tareas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Prioridad_Etapa">
-        <PropertyRef Name="id_prioridad" />
-      </Principal>
-      <Dependent Role="Tareas">
-        <PropertyRef Name="id_prioridad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -14,6 +14,11 @@ namespace SistemaSISCOP.Models
     
     public partial class Etapa_Tarea
     {
+        public Etapa_Tarea()
+        {
+            this.Comentarios = new HashSet<Comentarios>();
+        }
+    
         public int id_etapa_tarea { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public Nullable<int> id_tarea { get; set; }
@@ -21,6 +26,7 @@ namespace SistemaSISCOP.Models
     
         public virtual Etapas Etapas { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        public virtual ICollection<Comentarios> Comentarios { get; set; }
         public virtual Tareas Tareas { get; set; }
     }
 }

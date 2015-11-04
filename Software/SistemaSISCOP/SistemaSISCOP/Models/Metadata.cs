@@ -170,8 +170,8 @@ namespace SistemaSISCOP.Models
         public string fecha_final;
         [Display(Name = "Estado")]
         public string estado;
-        [Display(Name = "Prioridad_id")]
-        public string id_prioridad;
+        [Display(Name = "Prioridad")]
+        public string prioridad;
     }
 
     [MetadataType(typeof(TareasMetadata))]
@@ -221,18 +221,6 @@ namespace SistemaSISCOP.Models
     {
     }
 
-    public class Prioridad_EtapaMetaData
-    {
-        [Display(Name = "Prioridad-id")]
-        public int id_prioridad;
-        [Display(Name = "Prioridad")]
-        public string descripcion;
 
-    }
-
-    [MetadataType(typeof(Prioridad_EtapaMetaData))]
-    public partial class Prioridad_Etapa
-    {
-    }
     
 }

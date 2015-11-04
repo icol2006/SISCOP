@@ -13,7 +13,6 @@
     <fieldset>
         <legend>ViewEtapaTarea</legend>
 
-
         <div class="editor-field">
             @Html.HiddenFor(model => model.id_tarea)
             @Html.ValidationMessageFor(model => model.id_tarea)
@@ -51,11 +50,6 @@
             @Html.ValidationMessageFor(model => model.estado)
         </div>
 
-        <div class="editor-field">
-            @Html.HiddenFor(model => model.id_usuario)
-            @Html.ValidationMessageFor(model => model.id_usuario)
-        </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.nombre_usuario)
         </div>
@@ -65,17 +59,33 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.nombreEtapa)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("id_etapa", String.Empty)
+            @Html.ValidationMessageFor(model => model.id_etapa)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.prioridad)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.prioridad)
-            @Html.ValidationMessageFor(model => model.prioridad)
+            @Html.DropDownListFor(model => model.prioridad, new SelectList(
+                  new List<Object>{
+                       new { value = "Alta" , text = "Alta"  },
+                       new { value = "Media" , text = "Media" },
+                       new { value = "Baja" , text = "Baja"}
+                    },
+                  "value",
+                  "text",
+                   2))
         </div>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
+
+</fieldset>
 }
 
 <div>

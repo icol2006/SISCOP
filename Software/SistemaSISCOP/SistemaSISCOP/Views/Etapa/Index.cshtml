@@ -15,9 +15,6 @@
             @Html.DisplayNameFor(model => model.id_etapa)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Proyectos.nombre_estudio)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.nombre)
         </th>
         <th>
@@ -44,9 +41,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Proyectos.nombre_estudio)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.fecha_inicio)
             </td>
@@ -58,6 +53,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.encargado)
+            </td>
+            <td>
+                @Html.ActionLink("Ver Tareas", "Index", "Tarea", new { id = item.id_etapa }, null)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.id_etapa }) |

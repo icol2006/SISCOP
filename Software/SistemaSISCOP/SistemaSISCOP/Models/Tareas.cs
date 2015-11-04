@@ -24,9 +24,9 @@ namespace SistemaSISCOP.Models
         public string fecha_inicio { get; set; }
         public string fecha_final { get; set; }
         public string estado { get; set; }
-        public Nullable<int> id_prioridad { get; set; }
+        public string prioridad { get; set; }
+        public Nullable<int> id_etapa { get; set; }
     
         public virtual ICollection<Etapa_Tarea> Etapa_Tarea { get; set; }
-        public virtual Prioridad_Etapa Prioridad_Etapa { get; set; }
     }
 }
